@@ -9,29 +9,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="container">
-            <img src="https://i.ibb.co/0Gz2xsm/Whats-App-Image-2024-05-27-at-17-42-02.jpg" alt="Unclutter2day Logo" class="logo">
-            <h1>Welcome to Unclutter2day: Your Clutter-Free Partner</h1>
+            <img src="https://i.ibb.co/0Gz2xsm/Whats-App-Image-2024-05-27-at-17-42-02.jpg" alt="Unclutter2day Logo" class="logo" id="logo">
+            <h1 id="title">Unclutter2day</h1>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#" class="nav-link" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('accomplishments')">Accomplishments</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('reviews')">Reviews</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('owner')">About Us</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section id="overview">
+    <section id="home" class="section">
         <div class="container">
-            <h2>Overview</h2>
+            <h2>Home</h2>
             <p>Unclutter2day specializes in helping you declutter and organize your home, providing personalized cleaning and organizational services to suit your needs. Let us help you create a serene, clutter-free environment.</p>
             <button>Learn More</button>
         </div>
     </section>
 
-    <section id="accomplishments">
+    <section id="accomplishments" class="section" style="display:none;">
         <div class="container">
             <h2>Accomplishments</h2>
             <p>Over 100 satisfied customers have experienced the transformation of their homes with Unclutter2day. Join our happy clients and enjoy a clutter-free space.</p>
         </div>
     </section>
 
-    <section id="reviews">
+    <section id="reviews" class="section" style="display:none;">
         <div class="container">
             <h2>Before & After</h2>
             <div class="review-slider">
@@ -43,23 +52,23 @@
         </div>
     </section>
 
-    <section id="owner">
+    <section id="owner" class="section" style="display:none;">
         <div class="container">
-            <h2>About the Owner</h2>
-            <p>Hi, I'm Samira Wurm, the owner of Unclutter2day. I am passionate about helping people create organized and stress-free living spaces. With years of experience in cleaning and decluttering, I bring a personal touch to every project.</p>
+            <h2>About Us</h2>
+            <p>Hi, I'm [Your Name], the owner of Unclutter2day. I am passionate about helping people create organized and stress-free living spaces. With years of experience in cleaning and decluttering, I bring a personal touch to every project.</p>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section" style="display:none;">
         <div class="container">
             <h2>Contact Us</h2>
             <p>Phone: 123-456-7890</p>
             <p>Email: info@unclutter2day.com</p>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </section>
@@ -70,23 +79,69 @@
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
 
-        function showSlides(n) {
-            let slides = document.getElementsByClassName("review-image");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("review-image");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-    </script>
+        slides[slideIndex-1].style.display = "block";
+    }
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        const header = document.getElementById("main-header");
+        const logo = document.getElementById("logo");
+        const title = document.getElementById("title");
+        const navLinks = document.getElementById("nav-links");
+
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            header.style.padding = "10px 20px";
+            logo.style.display = "none";
+            title.style.fontSize = "2em";
+            title.style.marginLeft = "20px";
+            header.style.height = "50px";
+            navLinks.style.top = "50%";
+            navLinks.style.left = "auto";
+            navLinks.style.right = "20px";
+            navLinks.style.transform = "translateY(-50%)";
+        } else {
+            header.style.padding = "20px";
+            logo.style.display = "block";
+            title.style.fontSize = "3em";
+            title.style.marginLeft = "0";
+            title.style.top = "-20px"; /* Maintain the adjusted position */
+            header.style.height = "auto";
+            navLinks.style.top = "100px";
+            navLinks.style.left = "50%";
+            navLinks.style.right = "auto";
+            navLinks.style.transform = "translate(-50%, -50%)";
+        }
+    }
+</script>
 </body>
 </html>
