@@ -58,7 +58,39 @@
     function scrollToPricing() {
         document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Scroll function to adjust header size on scroll
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        const header = document.getElementById("main-header");
+        const logo = document.getElementById("logo");
+        const title = document.getElementById("title");
+        const navLinks = document.getElementById("nav-links");
+
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            header.style.padding = "10px 20px";
+            logo.style.display = "none";
+            title.style.fontSize = "2em";
+            title.style.marginLeft = "20px";
+            header.style.height = "50px";
+            navLinks.style.top = "50%";
+            navLinks.style.left = "auto";
+            navLinks.style.right = "20px";
+            navLinks.style.transform = "translateY(-50%)";
+        } else {
+            header.style.padding = "20px";
+            logo.style.display = "block";
+            title.style.fontSize = "3em";
+            title.style.marginLeft = "0";
+            title.style.top = "-20px"; /* Maintain the adjusted position */
+            header.style.height = "auto";
+            navLinks.style.top = "100px";
+            navLinks.style.left = "50%";
+            navLinks.style.right = "auto";
+            navLinks.style.transform = "translate(-50%, -50%)";
+        }
+    }
 </script>
 </body>
 </html>
-
