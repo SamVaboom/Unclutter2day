@@ -47,11 +47,18 @@
                     link.classList.remove('active');
                 });
                 document.querySelector(`[onclick="loadContent('${page}')"]`).classList.add('active');
-            });
+            })
+            .catch(error => console.error('Error loading content:', error));
     }
 
     // Load the home page by default
     loadContent('home');
+
+    // Scroll to Pricing section
+    function scrollToPricing() {
+        document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 </body>
 </html>
+
