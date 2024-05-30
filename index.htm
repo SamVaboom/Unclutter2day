@@ -47,6 +47,11 @@
                     link.classList.remove('active');
                 });
                 document.querySelector(`[onclick="loadContent('${page}')"]`).classList.add('active');
+
+                // Reinitialize slider if reviews page is loaded
+                if (page === 'reviews') {
+                    initSlider();
+                }
             })
             .catch(error => console.error('Error loading content:', error));
     }
@@ -90,6 +95,27 @@
             navLinks.style.right = "auto";
             navLinks.style.transform = "translate(-50%, -50%)";
         }
+    }
+
+    // Slider functionality
+    let slideIndex = 0;
+
+    function initSlider() {
+        showSlides(slideIndex);
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("review-image");
+        if (n >= slides.length) {slideIndex = 0}
+        if (n < 0) {slideIndex = slides.length - 1}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
     }
 </script>
 </body>
