@@ -275,4 +275,46 @@ footer {
     font-size: 1em;
     color: #555;
 }
+/* Pricing Table */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.pricing-table th,
+.pricing-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.pricing-table th {
+    background-color: #f4f4f4;
+}
+
+.pricing-table .tick {
+    color: green;
+    font-size: 1.5em;
+}
+
+.pricing-table .cross {
+    color: red;
+    font-size: 1.5em;
+}
+
+.pricing-button {
+    padding: 10px 20px;
+    background-color: #0277bd;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pricing-button:hover {
+    background-color: #01579b;
+}
 
