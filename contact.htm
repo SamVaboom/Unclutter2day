@@ -1,0 +1,29 @@
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Phone: 123-456-7890</p>
+        <p>Email: info@unclutter2day.com</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <!-- Contact Form -->
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="thank-you-message" class="thank-you-message">
+            <i class="fas fa-check-circle"></i> Thank you for your message!
+        </div>
+    </div>
+</section>
