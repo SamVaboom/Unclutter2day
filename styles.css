@@ -8,7 +8,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #414141; /* Updated background color */
     color: #333;
     text-align: center;
 }
