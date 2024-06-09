@@ -1,13 +1,18 @@
-<section id="reviews" class="section">
+<section id="reviews" class="section reviews">
     <div class="container">
-        <h2>Before & After</h2>
-        <div class="review-slider">
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <div class="review-slides">
-                <img src="https://i.ibb.co/6vNQzfY/Messy-Room.jpg" alt="Before" class="review-image">
-                <img src="https://i.ibb.co/s6L81nQ/Clean-Room.jpg" alt="After" class="review-image" style="display:none;">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <button class="nav-btn" onclick="changeReview(-1)">&#10094;</button>
+            <div class="review-content">
+                <p id="review-text">This is a sample review. Customer feedback will be displayed here.</p>
+                <div class="review-image">
+                    <img id="review-image" src="image1.jpg" alt="Review Image">
+                </div>
             </div>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            <button class="nav-btn" onclick="changeReview(1)">&#10095;</button>
         </div>
     </div>
 </section>
+
+<!-- Include FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
