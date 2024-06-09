@@ -378,3 +378,196 @@ footer {
     font-size: 1em;
     color: #555;
 }
+.accomplishments {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.accomplishments h2 {
+    margin-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+    color: #0277bd; /* Light blue */
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px; /* Increased spacing between steps */
+    position: relative;
+}
+
+.step1, .step3 {
+    justify-content: flex-start; /* Align left */
+}
+
+.step2, .step4 {
+    justify-content: flex-end; /* Align right */
+}
+
+/* Adjust order for alternating layout */
+.step1 .circle, .step3 .circle {
+    order: 1;
+    margin-right: 550px; /* Add space between circle and line */
+}
+
+.step1 .line, .step3 .line {
+    order: 2;
+}
+
+.step1 .description, .step3 .description {
+    order: 3;
+}
+
+.step2 .description, .step4 .description {
+    order: 1;
+}
+
+.step2 .line, .step4 .line {
+    order: 2;
+}
+
+.step2 .circle, .step4 .circle {
+    order: 3;
+    margin-left: 550px; /* Add space between circle and line */
+}
+
+.step .circle {
+    position: relative;
+    width: 200px; /* Increased size */
+    height: 200px; /* Increased size */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+
+.step1 .circle {
+    background-color: #00a2e8; /* Blue */
+}
+
+.step2 .circle {
+    background-color: #f7941d; /* Orange */
+}
+
+.step3 .circle {
+    background-color: #ed1c24; /* Red */
+}
+
+.step4 .circle {
+    background-color: #8cc63f; /* Green */
+}
+
+.step .circle h3 {
+    margin: 10px 0;
+    font-size: 1.5em; /* Increased font size */
+    font-weight: bold;
+}
+
+.step .circle i {
+    font-size: 2.5em; /* Increased icon size */
+    margin-bottom: 10px;
+}
+
+.step .arrow {
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    left: calc(50% + 100px); /* Adjusted to the increased circle size */
+    transform: translateX(-50%);
+}
+
+.arrow1 {
+    color: #00a2e8; /* Blue */
+}
+
+.arrow2 {
+    color: #f7941d; /* Orange */
+}
+
+.arrow3 {
+    color: #ed1c24; /* Red */
+}
+
+.line {
+    width: 5px;
+    height: 100px;
+    background-color: #333;
+    position: absolute;
+}
+
+.line-right {
+    left: calc(50% + -130px); /* Correct position to the right of the circle */
+}
+
+.line-left {
+    right: calc(50% + -130px); /* Correct position to the left of the circle */
+}
+
+.line1 {
+    background-color: #00a2e8; /* Blue */
+}
+
+.line2 {
+    background-color: #f7941d; /* Orange */
+}
+
+.line3 {
+    background-color: #ed1c24; /* Red */
+}
+
+.line4 {
+    background-color: #8cc63f; /* Green */
+}
+
+.description {
+    width: 500px; /* Increased width */
+    background-color: #fff;
+    padding: 20px; /* Increased padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1em; /* Increased font size */
+    position: absolute;
+}
+
+.description-left {
+    left: calc(50% - 450px); /* Moved 40px to the left */
+}
+
+.description-right {
+    right: calc(50% - 450px); /* Moved 40px to the right */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .step {
+        flex-direction: column;
+    }
+    .step .arrow {
+        left: 50%;
+        margin-top: 20px;
+        transform: translateX(-50%) rotate(90deg);
+    }
+    .line-left, .line-right {
+        display: none;
+    }
+    .description-left, .description-right {
+        position: static;
+        width: auto;
+        box-shadow: none;
+        margin-top: 10px;
+    }
+}
