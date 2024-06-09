@@ -571,3 +571,62 @@ footer {
         margin-top: 10px;
     }
 }
+/* Reviews Section */
+.reviews {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.reviews h2 {
+    margin-bottom: 40px;
+    font-family: 'Raleway', sans-serif;
+    color: #0277bd; /* Light blue */
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.review-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-image {
+    margin: 20px 0;
+}
+
+.review-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    color: #0277bd; /* Light blue */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-btn:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .review {
+        flex-direction: column;
+    }
+
+    .nav-btn {
+        margin: 10px 0;
+    }
+}
