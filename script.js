@@ -1,25 +1,11 @@
 function loadContent(page) {
-    fetch(`${page}.htm`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('main-content').innerHTML = data;
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            document.querySelector(`[onclick="loadContent('${page}')"]`).classList.add('active');
-
-            // Reinitialize slider if reviews page is loaded
-            if (page === 'reviews') {
-                initSlider();
-            }
-        })
-        .catch(error => console.error('Error loading content:', error));
+    // Your loadContent function logic here
 }
 
 // Load the home page by default
 document.addEventListener("DOMContentLoaded", () => {
     loadContent('home');
+    initSlider(); // Initialize the slider when the document is loaded
 });
 
 function scrollToPricing() {
@@ -76,4 +62,32 @@ function showSlides(n) {
         slides[i].style.display = "none";
     }
     slides[slideIndex].style.display = "block";
+}
+
+const reviews = [
+    {
+        text: "Review 1: This is an amazing service!",
+        image: "image1.jpg"
+    },
+    {
+        text: "Review 2: Very satisfied with the quality of work.",
+        image: "image2.jpg"
+    },
+    {
+        text: "Review 3: Highly recommend this to my friends and family.",
+        image: "image3.jpg"
+    }
+];
+
+let currentReviewIndex = 0;
+
+function changeReview(direction) {
+    currentReviewIndex += direction;
+    if (currentReviewIndex < 0) {
+        currentReviewIndex = reviews.length - 1;
+    } else if (currentReviewIndex >= reviews.length) {
+        currentReviewIndex = 0;
+    }
+    document.getElementById('review-text').innerText = reviews[currentReviewIndex].text;
+    document.getElementById('review-image').src = reviews[currentReviewIndex].image;
 }
